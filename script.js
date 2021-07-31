@@ -1,17 +1,23 @@
-'use stric';
+const money = 50000,
+	income = 'freelance',
 
-let money;
+	addExpenses = 'Car, Wife, AgainWife',
 
-let income;
+	deposit = false,
 
-let addExpenses;
+	mission = 100000,
 
-let deposit;
+	period = 12,
 
-let mission;
+	budgetDay = money / 12;
 
-let period;
+	console.log(typeof money, typeof income, typeof deposit);
 
-alert('Front-end');
-
-console.log('Front-end is coming');
+	console.log(addExpenses.length);
+	
+	console.log('Период равен ' + period + ' месяцев.' + ' Цель заработать ' + mission + ' долларов.');
+	
+	console.log(addExpenses.toLowerCase(). split(', '));
+	
+	console.log(budgetDay);
+	
