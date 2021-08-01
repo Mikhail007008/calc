@@ -1,3 +1,5 @@
+'use strict';
+
 const money = 50000,
 	income = 'freelance',
 
