@@ -11,7 +11,7 @@ const money = 50000,
 
 	period = 12,
 
-	budgetDay = money / 12;
+	budgetDay = money / 30;
 
 console.log(typeof money, typeof income, typeof deposit);
 
