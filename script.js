@@ -1,58 +1,18 @@
 'use strict';
 
-let money;
-let income;
-let addExpenses;
-let deposit;
-let mission;
-let period;
-
-alert('Front-end');
-console.log('Front-end is coming');
-
-let budgetDay = money / 30;
-money = 50000,
-income = 'freelance',
-addExpenses = 'Car, Wife, AgainWife',
-deposit = false,
-mission = 100000,
-period = 12;
-
-console.log(typeof money, typeof income, typeof deposit);
-console.log(addExpenses.length);
-console.log('Front-end is coming');
-console.log('Период равен ' + period + ' месяцев.' + ' Цель заработать ' + mission + ' долларов.');
-console.log(addExpenses.toLowerCase(). split(', '));
-console.log(budgetDay);
-	
-money = +prompt('Ваш месячный доход?');
-console.log(money);
-
-addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
-console.log(addExpenses);
-
-deposit = confirm('Есть ли у вас депозит в банке?');
-console.log(deposit);
-
-let cost1, cost2;
-let exp1 = prompt('Введите обязательную статью расходов?', 'Кредит / Отдых');
-	if (exp1 === 'Кредит'){
-		 cost1 = +prompt('Во сколько это обойдется?');
-	}
-
-let exp2 = prompt('Введите обязательную статью расходов?', 'Кредит / Отдых');
-	if (exp2 === 'Отдых'){
-		 cost2 = +prompt('Во сколько это обойдется?');
-	}
-
-let budgetMonth = money - (cost1 + cost2);
-console.log('Бюджет на месяц:', budgetMonth);
-
-let result = mission / budgetMonth;
-console.log('Цель будет достигнута за', Math.ceil(result), 'месяцев');
-
-budgetDay = budgetMonth / 30;
-console.log('Бюджет на день:', Math.floor(budgetDay));
+const income = 'freelance',
+	mission = 100000,
+	period = 12,
+	money = +prompt('Ваш месячный доход?'),
+	addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
+	deposit = confirm('Есть ли у вас депозит в банке?'),
+	exp1 = prompt('Введите обязательную статью расходов?', 'Кредит'),
+	cost1 = +prompt('Во сколько это обойдется?'),
+	exp2 = prompt('Введите обязательную статью расходов?', 'Отдых'),
+	cost2 = +prompt('Во сколько это обойдется?'),
+	budgetMonth = money - (cost1 + cost2),
+	result = mission / budgetMonth,
+	budgetDay = budgetMonth / 30;
 
 if (budgetDay>=1200){
 	alert('У вас высокий уровень дохода');
@@ -63,3 +23,16 @@ if (budgetDay>=1200){
 }else if (budgetDay<0){
 	alert('Что то пошло не так');
 }
+
+console.log(typeof money, typeof income, typeof deposit);
+console.log(addExpenses.length);
+console.log('Front-end is coming');
+console.log('Период равен ' + period + ' месяцев.' + ' Цель заработать ' + mission + ' долларов.');
+console.log(addExpenses.toLowerCase(). split(', '));
+console.log(budgetDay);
+console.log(money);
+console.log(addExpenses);
+console.log(deposit);
+console.log('Бюджет на месяц:', budgetMonth);
+console.log('Цель будет достигнута за', Math.ceil(result), 'месяцев');
+console.log('Бюджет на день:', Math.floor(budgetDay));
