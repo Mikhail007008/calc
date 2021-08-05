@@ -1,5 +1,22 @@
 'use strict';
 
+//lesson01
+let money;
+
+let income;
+
+let addExpenses;
+
+let deposit;
+
+let mission;
+
+let period;
+
+alert('Front-end');
+
+console.log('Front-end is coming');
+
 //lesson02
 const money = 50000,
 	income = 'freelance',
@@ -105,5 +122,3 @@ console.log(getExpensesMonth());
 console.log(accumulatedMonth);
 console.log(getTargetMonth());
 getStatusIncome();
-
-	
