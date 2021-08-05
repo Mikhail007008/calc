@@ -1,18 +1,18 @@
-'use strict';
+// 'use strict';
 
-const income = 'freelance',
-	mission = 100000,
-	period = 12,
-	money = +prompt('Ваш месячный доход?'),
-	addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
-	deposit = confirm('Есть ли у вас депозит в банке?'),
-	exp1 = prompt('Введите обязательную статью расходов?', 'Кредит'),
-	cost1 = +prompt('Во сколько это обойдется?'),
-	exp2 = prompt('Введите обязательную статью расходов?', 'Отдых'),
-	cost2 = +prompt('Во сколько это обойдется?'),
-	budgetMonth = money - (cost1 + cost2),
-	result = mission / budgetMonth,
-	budgetDay = budgetMonth / 30;
+// const income = 'freelance',
+// 	mission = 100000,
+// 	period = 12,
+// 	money = +prompt('Ваш месячный доход?'),
+// 	addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
+// 	deposit = confirm('Есть ли у вас депозит в банке?'),
+// 	exp1 = prompt('Введите обязательную статью расходов?', 'Кредит'),
+// 	cost1 = +prompt('Во сколько это обойдется?'),
+// 	exp2 = prompt('Введите обязательную статью расходов?', 'Отдых'),
+// 	cost2 = +prompt('Во сколько это обойдется?'),
+// 	budgetMonth = money - (cost1 + cost2),
+// 	result = mission / budgetMonth,
+// 	budgetDay = budgetMonth / 30;
 
 if (budgetDay>=1200){
 	alert('У вас высокий уровень дохода');
