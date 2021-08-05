@@ -1,17 +1,17 @@
-'use strict';
+// 'use strict';
 
-let money;
+// let money;
 
-let income;
+// let income;
 
-let addExpenses;
+// let addExpenses;
 
-let deposit;
+// let deposit;
 
-let mission;
+// let mission;
 
-let period;
+// let period;
 
-alert('Front-end');
+// alert('Front-end');
 
-console.log('Front-end is coming');
+// console.log('Front-end is coming');
