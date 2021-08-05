@@ -1,5 +1,6 @@
 'use strict';
 
+//lesson03
 const income = 'freelance',
 	mission = 100000,
 	period = 12,
@@ -37,7 +38,7 @@ console.log('Бюджет на месяц:', budgetMonth);
 console.log('Цель будет достигнута за', Math.ceil(result), 'месяцев');
 console.log('Бюджет на день:', Math.floor(budgetDay));
 
-
+//lesson04
 const income = 'freelance',
 	mission = 100000,
 	money = +prompt('Ваш месячный доход?'),
