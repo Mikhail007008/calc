@@ -119,6 +119,7 @@ const appData = {
 		return appData.budgetMonth * appData.period;
 	}
 };
+
 appData.asking();
 appData.getInfoDeposit();
 appData.getExpensesMonth();
@@ -126,6 +127,16 @@ console.log('Расходы за месяц: ' + appData.expensesMonth);
 appData.getBudget();
 appData.infoTarget();
 appData.getStatusIncome();
+
+const fixMass = function(str){
+	return str
+	.map(
+		(word, index) => word[0].toUpperCase() + word.slice(1)
+	)
+	.join(', ');
+};
+
+console.log(fixMass(appData.addExpesnses));
 
 for(let key in appData){
 	console.log('Наша программа включает в себя данные: ' + 'Свойство: ' + key + ' Значение: ' + appData[key]);}
