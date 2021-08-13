@@ -15,11 +15,16 @@ start();
 
 const appData = {
 	addIncome: [],
+	income: {},
 	expenses: {},
 	addExpesnses: [],
 	deposit: false,
 	mission: 50000,
 	period: 12,
+	budget: money,
+	budgetDay: 0,
+	budgetMonth: 0,
+	expensesMonth: 0,
 	asking: function(){
 		const addExpesnses = prompt('Перечислите возможные расходы через запятую');
 			appData.addExpesnses = addExpesnses.toLowerCase().split(',');
@@ -36,11 +41,6 @@ const appData = {
 				while((!isNumber(secondQuest)));
 		}
 	},
-
-	budget: money,
-	budgetDay: 0,
-	budgetMonth: 0,
-	expensesMonth: 0,
 
 	getExpensesMonth: function(){
 		for (let key in appData.expenses) {
