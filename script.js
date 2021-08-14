@@ -134,7 +134,7 @@ const fixMass = function(str){
 		(word, index) => word[0].toUpperCase() + word.slice(1)
 	)
 	.join(', ');
-};
+}; 
 
 console.log(fixMass(appData.addExpesnses));
 
