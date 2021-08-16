@@ -1,5 +1,28 @@
 'use strict';
 
+const buttonStart = document.getElementById('start'),
+	plus1 = document.getElementsByTagName('button')[0],
+	plus2 = document.getElementsByTagName('button')[1],
+	checkbox = document.querySelector('#deposit-check'),
+	additionalIncomeItem = document.querySelectorAll('.additional_income-item'),
+	budgetDayValue = document.getElementsByClassName('result-total')[1],
+	expensesMonthValue = document.getElementsByClassName('result-total')[2],
+	additionalIncomeValue = document.getElementsByClassName('result-total')[3],
+	additionalExpensesValue = document.getElementsByClassName('result-total')[4],
+	incomePeriodValue = document.getElementsByClassName('result-total')[5],
+	targetMonthValue = document.getElementsByClassName('result-total')[6],
+	salaryAmount = document.querySelector('.salary-amount'),
+	incomeTitle = document.querySelector('.income-title'),
+	incomeAmount = document.querySelector('.income-amount'),
+	expensesTitle = document.querySelector('.expenses-title'),
+	expensesAmount = document.querySelector('.expenses-amount'),
+	additionalExpensesItem = document.querySelector('.additional_expenses-item'),
+	depositAmount = document.querySelector('.deposit-amount'),
+	depositPercent = document.querySelector('.deposit-percent'),
+	targetAmount = document.querySelector('.target-amount'),
+	resultTotalBudgetMonthValue = document.querySelector('.result-total budget_month-value'),
+	range = document.querySelector('[type="range"]');
+
 const isNumber = function(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
 };
@@ -27,28 +50,6 @@ const appData = {
 	budgetDay: 0,
 	budgetMonth: 0,
 	expensesMonth: 0,
-	buttonStart: document.getElementById('start'),
-	plus1: document.getElementsByTagName('button')[0],
-	plus2: document.getElementsByTagName('button')[1],
-	checkbox: document.querySelector('#deposit-check'),
-	additionalIncomeItem: document.querySelectorAll('.additional_income-item'),
-	budgetDayValue: document.getElementsByClassName('result-total')[1],
-	expensesMonthValue: document.getElementsByClassName('result-total')[2],
-	additionalIncomeValue: document.getElementsByClassName('result-total')[3],
-	additionalExpensesValue: document.getElementsByClassName('result-total')[4],
-	incomePeriodValue: document.getElementsByClassName('result-total')[5],
-	targetMonthValue: document.getElementsByClassName('result-total')[6],
-	salaryAmount: document.querySelectorAll('input')[0],
-	incomeTitle: document.querySelectorAll('input')[1],
-	incomeAmount: document.querySelectorAll('input')[2],
-	expensesTitle: document.querySelectorAll('input')[5],
-	expensesAmount: document.querySelectorAll('input')[6],
-	additionalExpensesItem: document.querySelectorAll('input')[7],
-	depositAmount: document.querySelectorAll('input')[9],
-	depositPercent: document.querySelectorAll('input')[10],
-	targetAmount: document.querySelectorAll('input')[11],
-	resultTotalBudgetMonthValue: document.querySelectorAll('input')[13],
-	range: document.querySelector('[type="range"]'),
 	asking: function(){
 
 		if(confirm('Есть ли у вас дополнительный заработок?')){
