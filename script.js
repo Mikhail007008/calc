@@ -12,16 +12,16 @@ const buttonStart = document.getElementById('start'),
 	incomePeriodValue = document.getElementsByClassName('result-total')[5],
 	targetMonthValue = document.getElementsByClassName('result-total')[6],
 	salaryAmount = document.querySelector('.salary-amount'),
-	incomeTitle = document.querySelector('.income-items input[placeholder="Наименование"]'),
+	incomeTitle = document.querySelector('.income-items input[class=income-title]'),
 	incomeAmount = document.querySelector('.income-amount'),
-	expensesTitle = document.querySelector('div.expenses-items input[placeholder="Наименование"]'),
+	expensesTitle = document.querySelector('div.expenses-items input[class=expenses-title]'),
 	expensesAmount = document.querySelector('.expenses-amount'),
 	additionalExpensesItem = document.querySelector('.additional_expenses-item'),
 	depositAmount = document.querySelector('.deposit-amount'),
 	depositPercent = document.querySelector('.deposit-percent'),
 	targetAmount = document.querySelector('.target-amount'),
 	resultTotalBudgetMonthValue = document.querySelector('.budget_month-value'),
-	range = document.querySelector('[type="range"]');
+	range = document.querySelector('[type=range]');
 
 const isNumber = function(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
