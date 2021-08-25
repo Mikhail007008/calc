@@ -1,6 +1,6 @@
 'use strict';
 
-let buttonStart = document.getElementById('start'),
+const buttonStart = document.getElementById('start'),
 	plus1 = document.getElementsByTagName('button')[0],
 	plus2 = document.getElementsByTagName('button')[1],
 	checkbox = document.querySelector('#deposit-check'),
@@ -20,9 +20,10 @@ let buttonStart = document.getElementById('start'),
 	targetAmount = document.querySelector('.target-amount'),
 	resultTotalBudgetMonthValue = document.getElementsByClassName('budget_month-value')[0],
 	periodSelect = document.querySelector('[type=range]'),
-	incomeItems = document.querySelectorAll('.income-items'),
-	expensesItems = document.querySelectorAll('.expenses-items'),
 	periodAmount = document.querySelector('.period-amount');
+
+let incomeItems = document.querySelectorAll('.income-items'),
+	expensesItems = document.querySelectorAll('.expenses-items');
 
 const appData = {
 	addIncome: [],
@@ -56,8 +57,9 @@ const appData = {
 		additionalExpensesValue.value = appData.addExpesnses.join(', ');
 		additionalIncomeValue.value = appData.addIncome.join(', ');
 		targetMonthValue.value = Math.ceil(appData.getTargetMonth());
-		incomePeriodValue.value = appData.calcSavedMoney().value;
+		periodSelect.value = appData.calcSavedMoney();
 		periodAmount.value = periodSelect.value;
+		periodSelect.addEventListener('input', appData.calcSavedMoney);
 	},
 
 	addExpensesBlock: function(){
@@ -162,5 +164,4 @@ salaryAmount.addEventListener('input', appData.buttonStartOn);
 buttonStart.addEventListener('click', appData.start);
 plus1.addEventListener('click', appData.addIncomeBlock);
 plus2.addEventListener('click', appData.addExpensesBlock);
-periodSelect.addEventListener('change', appData.rangeFunc);
-periodSelect.addEventListener('change', appData.calcSavedMoney);
+periodSelect.addEventListener('input', appData.rangeFunc);
