@@ -2,7 +2,7 @@
 
 const book = document.querySelectorAll('.book'),
 	aHref = document.querySelectorAll('a'),
-	ulCollection = document.querySelectorAll('ul'),
+	// ulCollection = document.querySelectorAll('ul'),
 	liCollection = document.querySelectorAll('li'),
 	newEl = document.createElement('li'),
 	ad = document.querySelector('.adv');
@@ -16,8 +16,9 @@ aHref[4].textContent = 'Книга 3. this и Прототипы Объекто�
 
 ulCollection[0].append(liCollection[4], liCollection[5], liCollection[7], liCollection[9], liCollection[2], liCollection[10]);
 
-
-ulCollection[5].prepend(liCollection[46], liCollection[50]);
+book[5].children('ul').append(liCollection[53], liCollection[51], liCollection[54], liCollection[56]);
+// book[5].appendChild(ulCollection[5]).prepend(liCollection[53], liCollection[51], liCollection[48], liCollection[47]);
+// ulCollection[5].prepend(liCollection[52], liCollection[50]);
 // ul[5].append(li[49]);
 // ul[5].append(li[50]);
 // ul[5].append(li[48]);
