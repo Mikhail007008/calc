@@ -47,6 +47,7 @@ const appData = {
 		appData.getAddExpenses();
 		appData.getAddIncome();
 		appData.getBudget();
+		appData.calcSavedMoney();
 		appData.showResult();
 	},
 
@@ -57,7 +58,6 @@ const appData = {
 		additionalExpensesValue.value = appData.addExpesnses.join(', ');
 		additionalIncomeValue.value = appData.addIncome.join(', ');
 		targetMonthValue.value = Math.ceil(appData.getTargetMonth());
-		periodSelect.value = appData.calcSavedMoney();
 		periodAmount.value = periodSelect.value;
 		periodSelect.addEventListener('input', appData.calcSavedMoney);
 	},
@@ -147,10 +147,10 @@ const appData = {
 
 	buttonStartOn: function(){
 		if(salaryAmount.value !== ''){
-			buttonStart.style.display = 'initial';
+			buttonStart.disabled = false;
 
 		}else{
-			buttonStart.style.display = 'none';
+			buttonStart.disabled = true;
 		}
 	},
 
@@ -159,7 +159,7 @@ const appData = {
 	}
 };
 
-buttonStart.style.display = 'none';
+buttonStart.disabled = true;
 salaryAmount.addEventListener('input', appData.buttonStartOn);
 buttonStart.addEventListener('click', appData.start);
 plus1.addEventListener('click', appData.addIncomeBlock);
