@@ -37,10 +37,13 @@ const appData = {
 	budgetDay: 0,
 	budgetMonth: 0,
 	expensesMonth: 0,
+	foo: function(){
+		console.log(this);
+	},
 
 	start: function() {
 		appData.budget = +salaryAmount.value;
-
+		
 		appData.getExpenses();
 		appData.getIncome();
 		appData.getExpensesMonth();
@@ -49,8 +52,11 @@ const appData = {
 		appData.getBudget();
 		appData.calcSavedMoney();
 		appData.showResult();
+		appData.foo();
+		
 	},
 
+	
 	showResult: function(){
 		resultTotalBudgetMonthValue.value = appData.budgetMonth;
 		budgetDayValue.value = Math.ceil(appData.budgetDay);
