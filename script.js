@@ -27,8 +27,6 @@ const buttonStart = document.getElementById('start'),
 let incomeItems = document.querySelectorAll('.income-items'),
 	expensesItems = document.querySelectorAll('.expenses-items');
 
-
-
 const appData = {
 	addIncome: [],
 	income: {},
@@ -46,6 +44,7 @@ const appData = {
 	},
 
 	start: function() {
+
 		this.budget = +salaryAmount.value;
 
 		this.getExpenses();
@@ -57,6 +56,15 @@ const appData = {
 		this.calcSavedMoney();
 		this.showResult();
 		this.foo();
+
+		let inputsText = main.querySelectorAll('[type=text]');
+		for (var i = 0; i < inputsText.length; i++){
+			inputsText[i].disabled = true;
+		}
+		buttonStart.style.display = 'none';
+		buttonCancel.style.display = 'initial';
+		buttonStart.disabled = true;
+
 	},
 
 	reset: function() {
@@ -69,9 +77,36 @@ const appData = {
 			for (var i = 0; i < inputsText.length; i++){
 				inputsText[i].disabled = false;
 			}
+			
+			for(let i = 1; i < incomeItems.length; i++){
+				incomeItems[i].parentNode.removeChild(incomeItems[i]);
+				plus2.style.display = 'block';
+			}
+
+			for(let i = 1; i < expensesItems.length; i++){
+				expensesItems[i].parentNode.removeChild(expensesItems[i]);
+				plus1.style.display = 'block';
+			}
 
 			buttonStart.style.display = 'initial';
 			buttonCancel.style.display = 'none';
+
+			this.budget = 0;
+			this.addIncome = [];
+			this.income = {};
+			this.expenses = {};
+			this.addExpesnses = [];
+			this.deposit = false;
+			this.percentDeposit = 0;
+			this.moneyDeposit = 0;
+			this.budget = 0;
+			this.budgetDay = 0;
+			this.budgetMonth = 0;
+			this.expensesMonth = 0;
+
+			periodSelect.value = 0;
+			periodAmount.innerHTML = periodSelect.value;
+
 	},
 
 	showResult: function(){
@@ -185,14 +220,6 @@ const appData = {
 buttonStart.disabled = true;
 salaryAmount.addEventListener('input', appData.buttonStartOn);
 buttonStart.addEventListener('click', appData.start.bind(appData));
-buttonStart.addEventListener('click', function(){
-	let inputsText = main.querySelectorAll('[type=text]');
-	for (var i = 0; i < inputsText.length; i++){
-		inputsText[i].disabled = true;
-	}
-	buttonStart.style.display = 'none';
-	buttonCancel.style.display = 'initial';
-});
 buttonCancel.addEventListener('click', appData.reset);
 plus1.addEventListener('click', appData.addIncomeBlock);
 plus2.addEventListener('click', appData.addExpensesBlock);
