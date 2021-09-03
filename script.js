@@ -82,7 +82,7 @@ const appData = {
 		additionalIncomeValue.value = this.addIncome.join(', ');
 		targetMonthValue.value = Math.ceil(this.getTargetMonth());
 		periodAmount.value = periodSelect.value;
-		periodSelect.addEventListener('input', this.calcSavedMoney.bind(appData));
+		periodSelect.addEventListener('input', this.calcSavedMoney.bind(this));
 	},
 
 	addExpensesBlock: function(){
@@ -147,7 +147,7 @@ const appData = {
 	},
 
 	getExpensesMonth: function(){
-		for (let key in appData.expenses) {
+		for (let key in this.expenses) {
 			this.expensesMonth += +this.expenses[key];
 		}
 	},
@@ -183,7 +183,7 @@ const appData = {
 };
 
 buttonStart.disabled = true;
-salaryAmount.addEventListener('input', appData.buttonStartOn.bind(appData));
+salaryAmount.addEventListener('input', appData.buttonStartOn);
 buttonStart.addEventListener('click', appData.start.bind(appData));
 buttonStart.addEventListener('click', function(){
 	let inputsText = main.querySelectorAll('[type=text]');
@@ -193,7 +193,7 @@ buttonStart.addEventListener('click', function(){
 	buttonStart.style.display = 'none';
 	buttonCancel.style.display = 'initial';
 });
-buttonCancel.addEventListener('click', appData.reset.bind(appData));
-plus1.addEventListener('click', appData.addIncomeBlock.bind(appData));
-plus2.addEventListener('click', appData.addExpensesBlock.bind(appData));
-periodSelect.addEventListener('input', appData.rangeFunc.bind(appData));
+buttonCancel.addEventListener('click', appData.reset);
+plus1.addEventListener('click', appData.addIncomeBlock);
+plus2.addEventListener('click', appData.addExpensesBlock);
+periodSelect.addEventListener('input', appData.rangeFunc);
