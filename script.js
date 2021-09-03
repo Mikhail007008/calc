@@ -56,7 +56,7 @@ const appData = {
 		this.getBudget();
 		this.calcSavedMoney();
 		this.showResult();
-		appData.foo();
+		this.foo();
 	},
 
 	reset: function() {
@@ -82,7 +82,7 @@ const appData = {
 		additionalIncomeValue.value = this.addIncome.join(', ');
 		targetMonthValue.value = Math.ceil(this.getTargetMonth());
 		periodAmount.value = periodSelect.value;
-		periodSelect.addEventListener('input', appData.calcSavedMoney.bind(appData));
+		periodSelect.addEventListener('input', this.calcSavedMoney.bind(appData));
 	},
 
 	addExpensesBlock: function(){
