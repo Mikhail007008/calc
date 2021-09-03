@@ -80,12 +80,10 @@ const appData = {
 			
 			for(let i = 1; i < incomeItems.length; i++){
 				incomeItems[i].parentNode.removeChild(incomeItems[i]);
-				plus2.style.display = 'block';
 			}
 
 			for(let i = 1; i < expensesItems.length; i++){
 				expensesItems[i].parentNode.removeChild(expensesItems[i]);
-				plus1.style.display = 'block';
 			}
 
 			buttonStart.style.display = 'initial';
