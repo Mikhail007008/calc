@@ -109,7 +109,6 @@ AppData.prototype.reset = function() {
 };
 
 AppData.prototype.showResult = function(){
-	this.showResult.bind(AppData);
 	resultTotalBudgetMonthValue.value = this.budgetMonth;
 	budgetDayValue.value = Math.ceil(this.budgetDay);
 	expensesMonthValue.value = this.expensesMonth;
