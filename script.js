@@ -236,6 +236,7 @@ class AppData {
 	changePercent(){
 		const valueSelect = this.value;
 		if(valueSelect === 'other'){
+			depositPercent.value = '';
 			depositPercent.style.display = 'inline-block';
 			depositPercent.addEventListener('input', function(){
 				let foo = depositPercent.value;
